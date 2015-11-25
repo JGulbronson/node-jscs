@@ -81,6 +81,13 @@ describe('rules/require-aligned-multiline-params', function() {
 
             expect(checker.checkString(unalignedFunction)).to.have.error.count.equal(2);
         });
+
+        it('should validate an empty function', function() {
+            var emptyFunction = 'var emptyFunction = function(a, b, c) {\n' +
+                                '};';
+
+            expect(checker.checkString(emptyFunction)).to.have.no.errors();
+        });
     });
 
     describe('when we pass a number as the config option', function() {
@@ -137,6 +144,13 @@ describe('rules/require-aligned-multiline-params', function() {
 
             expect(checker.checkString(unalignedFunction)).to.have.error.count.equal(2);
         });
+
+        it('should validate an empty function', function() {
+            var emptyFunction = 'var emptyFunction = function(a, b, c) {\n' +
+                                '};';
+
+            expect(checker.checkString(emptyFunction)).to.have.no.errors();
+        });
     });
 
     describe('when we pass "firstParam" as the config option', function() {
@@ -192,6 +206,13 @@ describe('rules/require-aligned-multiline-params', function() {
                                     '};';
 
             expect(checker.checkString(unalignedFunction)).to.have.error.count.equal(2);
+        });
+
+        it('should validate an empty function', function() {
+            var emptyFunction = 'var emptyFunction = function(a, b, c) {\n' +
+                                '};';
+
+            expect(checker.checkString(emptyFunction)).to.have.no.errors();
         });
     });
 });
